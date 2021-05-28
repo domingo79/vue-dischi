@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <title>Albums Vue</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+
+        <header>
+            <img src="./asset/img/logo.png" alt="logo spotyfive">
+        </header>
+
+        <section class="filtro">
+
+            <label for="option">Genere musicale</label>
+            <select @click="getGenere()" v-model="genereSelezionato" id="option">
+                <option value="">TUTTI</option>
+                <option v-for="genere in generi" :value="genere">{{genere}}</option>
+            </select>
+        </section>
+
+        <main>
+            <div class="card" v-for="(disk, index) in response"
+                v-if="genereSelezionato === disk.genre || genereSelezionato === ''">
+                <img :src="disk.poster" class="card_img" alt="Copertina album musicale di {disk.author}">
+                <div class="card_body">
+                    <h2 class="card_title">{{disk.title}}</h2>
+                    <h5 class="card_author">{{disk.author}}</h5>
+                    <p class="card_year">{{disk.year}} </p>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./asset/js/main.js"></script>
+</body>
+
+</html>
