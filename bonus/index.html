@@ -29,7 +29,7 @@
         </section>
 
         <main>
-            <div class="card" v-for="(disk, index) in response"
+            <div class="card" v-for="disk, in response"
                 v-if="genereSelezionato === disk.genre || genereSelezionato === ''">
                 <img :src="disk.poster" class="card_img" alt="Copertina album musicale di {disk.author}">
                 <div class="card_body">
