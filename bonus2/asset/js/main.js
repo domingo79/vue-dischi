@@ -5,6 +5,7 @@ const app = new Vue({
         response: '', //include tutto l'oggetto
         generi: [],
         genereSelezionato: '',
+        error: []
     },
     methods: {
         getGenere() {
@@ -30,6 +31,8 @@ const app = new Vue({
             })
             .catch(e => {
                 console.error(e);
+                this.error.push(e);
+
             })
     }
 });

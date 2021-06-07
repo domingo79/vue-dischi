@@ -15,7 +15,9 @@
         <header>
             <img src="./asset/img/logo.png" alt="logo spotyfive">
         </header>
-
+        <div class="error" v-if="error.length > 0">
+            {{error}}
+        </div>
         <section class="filtro">
 
             <label for="option">Genere musicale</label>
