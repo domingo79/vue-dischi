@@ -4,6 +4,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+body
+{
+    background-color: #1E2D3B; 
+}
+.error
+{
+    color: white;
+    background-color: burlywood;
+}
 .container
 {
     width: 100%;
@@ -12,7 +21,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    background-color: #1E2D3B;
+    /* background-color: #1E2D3B;  */
 }
 header
 {

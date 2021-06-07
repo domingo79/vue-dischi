@@ -15,8 +15,10 @@
         <header>
             <img src="./asset/img/logo.png" alt="logo spotyfive">
         </header>
-
-        <div class="card" v-for="(disk, index) in response">
+        <div class="error" v-if="error.length > 0">
+            {{error}}
+        </div>
+        <div class="card" v-for="disk in response">
             <img :src="disk.poster" class="card_img" alt="Copertina album musicale di {disk.author}">
             <div class="card_body">
                 <h2 class="card_title">{{disk.title}}</h2>

@@ -3,6 +3,7 @@ const app = new Vue({
     data: {
         url: 'https://flynn.boolean.careers/exercises/api/array/music',
         response: '', //include tutto l'oggetto
+        error: []
 
     },
     methods: {},
@@ -15,6 +16,7 @@ const app = new Vue({
             })
             .catch(e => {
                 console.error(e);
+                this.error.push(e);
             })
 
     }
